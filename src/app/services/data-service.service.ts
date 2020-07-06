@@ -3,19 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators'
 import { GlobalDatacountries } from '../models/globalData';
 import { Globaldate } from '../models/globaldate';
+import { formatDate } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
-  // dates=new Date().toLocaleDateString();
-  // currentdate=this.dates.split('/');
+export class DataServiceService  {
+  dates=new Date();
+   currentdate=formatDate(this.dates, 'MM-dd-yyyy','en_IN', 'UTC');
+    dateold=this.dates.setDate(this.dates.getDate()-1);
+    stringDateOld=formatDate(this.dateold,'MM-dd-yyyy','en_IN', 'UTC');
+  //  private dateToday: Date = new Date();
+
+  //  private dateYesterday: Date = new Date();
+
 
   private globalDateData="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
-  private globalData="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/07-04-2020.csv";
-  constructor(private http:HttpClient) { }
+  private globalData=`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${this.stringDateOld}.csv`;
+  constructor(private http:HttpClient) {
+
+    // this.dateYesterday = new Date(this.dateYesterday.setDate(this.dateYesterday.getDate() - 1));
+    // this.dateold=formatDate(this.dateYesterday, 'MM-dd-yyyy','en_IN', 'UTC');
+  }
 
 getGlobaldate(){
+
  return this.http.get(this.globalDateData,{responseType:'text'}).pipe(map(res=>{
+     console.log(typeof(this.stringDateOld));
    let rows=res.split('\n')
    let main={};
     let countryday=rows[0];
