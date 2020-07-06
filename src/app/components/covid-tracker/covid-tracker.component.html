@@ -1,0 +1,101 @@
+
+
+<body class="skin-light fixed-sn" style="background-color: rgb(251, 251, 251); padding-right: 0px;" aria-busy="true">
+<div class="header bg-white text-center">
+  <h1 class="display-5">Covid Tracker</h1>
+<app-dashboard [totalactivecase]="totalactivecase" [totalrecoveredcase]="totalrecoveredcase"
+[totaldeathcase]="totaldeathcase" [totalconfirmcase]="totalconfirmcase"></app-dashboard>
+
+<div class="row" *ngIf="!islsoading">
+
+  <!-- <div class="col-lg-6 col-md-6 mb-4">
+
+
+    <div class="card">
+
+      <div class="card-body">
+
+        <p class="text-uppercase medium mb-2"><strong>chart</strong></p>
+        <google-chart [data]="columnchart"></google-chart>
+
+      </div>
+
+    </div>
+
+
+
+  </div> -->
+  <div class="col-lg-6 col-md-6 mb-4">
+
+    <!-- Card -->
+    <div class="card">
+
+      <div class="card-body">
+
+        <p class="text-uppercase medium mb-2"><strong></strong></p>
+        <google-chart [data]="GeoChart"></google-chart>
+
+      </div>
+
+    </div>
+
+    <!-- Card -->
+
+  </div>
+  <div class="col-lg-6 col-md-6 mb-4">
+
+    <!-- Card -->
+    <div class="card">
+
+      <div class="card-body">
+
+        <!-- <div class="ui form">
+          <div class="inline fields">
+            <label for="records">All records:</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="case"  id="R"  value='R'  #R (click)="onchange(R)" class="hidden">
+                <label for="R">recovered case</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="case" id="A" value='A' #A (click)="onchange(A)" class="hidden">
+                <label  for="A">Active Case</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="case" id="C" value='C' #C (click)="onchange(C)" class="hidden">
+                <label  for="C">Confirm case</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="case"  value='D' id="D" #D (click)="onchange(D)" class="hidden">
+                <label  for="D">death Case</label>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <p class="text-lowercase medium mb-2"><strong style="letter-spacing: 2px; font-size: 16px;"> recovered case</strong></p>
+        <google-chart [data]="piechart"></google-chart>
+
+      </div>
+
+    </div>
+
+    <!-- Card -->
+
+  </div>
+
+
+
+</div>
+
+
+
+</div>
+
+</body>

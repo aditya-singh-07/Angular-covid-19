@@ -1,0 +1,29 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo fixed-top scrolling-navbar " [containerInside]="false">
+  <mdb-navbar-brand>
+      <a class="logo navbar-brand" href="#"><strong>COVID-19</strong></a>
+  </mdb-navbar-brand>
+  <links>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active waves-light" mdbWavesEffect>
+              <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" routerLink="covid-tracker">Dashboard</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="country">country</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link"><mdb-icon fab icon="facebook-f"></mdb-icon></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link"><mdb-icon fab icon="twitter"></mdb-icon></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link"><mdb-icon fab icon="instagram"></mdb-icon></a>
+          </li>
+      </ul>
+  </links>
+</mdb-navbar>

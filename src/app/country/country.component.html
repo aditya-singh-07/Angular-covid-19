@@ -1,0 +1,99 @@
+
+  <div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+  </div>
+  <p></p>
+
+<body class="skin-light fixed-sn" style="background-color: rgb(251, 251, 251); padding-right: 0px;" aria-busy="true">
+  <div class="header bg-white text-center">
+    <h1 class="display-5">Covid Tracker country</h1>
+
+  <div class="row1">
+    <div class="col-md-5 mb-3 p-3 border bg-white mx-auto">
+      <label for="validationCustom03">Select country</label>
+        <select style="border:1px solid #007bff;" class="form-control" id="validationCustom03" #Input (change)='showData(Input.value)' required>
+          <option value="{{countries}}" *ngFor="let countries of country">{{countries}} </option>
+        </select>
+    </div>
+    <app-dashboard [totalactivecase]="totalactivecase" [totalrecoveredcase]="totalrecoveredcase"
+[totaldeathcase]="totaldeathcase" [totalconfirmcase]="totalconfirmcase"></app-dashboard>
+
+  </div>
+  <!-- <div class="col-lg-6 col-md-6 mb-4">
+
+
+    <div class="card">
+
+      <div class="card-body">
+
+        <p class="text-uppercase medium mb-2"><strong></strong></p>
+        <google-chart [data]="linechart"></google-chart>
+
+      </div>
+
+    </div>
+
+
+
+  </div> -->
+  <!-- <div class="container-fluid">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr class="d-flex">
+          <th scope="col">Sn</th>
+          <th scope="col">case</th>
+          <th scope="col">date</th>
+          <th scope="col">country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="d-flex" *ngFor="let country of selectcountry; index as i ">
+          <td>{{i+1}}</td>
+          <td>{{country.case}}</td>
+          <td>{{country.date | date}}</td>
+          <td>{{country.country}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+  <div class="col-lg-12 col-md-6 mb-4" >
+    <div class="card">
+      <div class="card-body">
+
+
+      <table class="table table-hover table-fixed">
+
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>case</th>
+            <th>date</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+          <tr *ngFor="let country of selectcountry; index as i ">
+            <td>{{i+1}}</td>
+            <td>{{country.case}}</td>
+            <td>{{country.date | date}}</td>
+            <td>{{country.country}}</td>
+          </tr>
+
+        </tbody>
+        </table>
+        <!--Table body-->
+      </div>
+
+    </div>
+
+  </div>
+
+
+  </div>
+
+  </body>
