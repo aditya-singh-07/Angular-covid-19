@@ -10,7 +10,7 @@ import { formatDate } from '@angular/common';
 export class DataServiceService  {
   dates=new Date();
    currentdate=formatDate(this.dates, 'MM-dd-yyyy','en_IN', 'UTC');
-    dateold=this.dates.setDate(this.dates.getDate()-1);
+    dateold=this.dates.setDate(this.dates.getDate()-2);
     stringDateOld=formatDate(this.dateold,'MM-dd-yyyy','en_IN', 'UTC');
   //  private dateToday: Date = new Date();
 
